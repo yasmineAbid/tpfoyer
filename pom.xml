@@ -27,12 +27,12 @@
         <repository>
             <id>dee807ad-80ae-4db7-8172-d9826b9bca7e</id>
             <name>Nexus Releases</name>
-            <url>http://192.168.0.100:8081/repository/maven-releases/</url>
+            <url>http://192.168.1.120:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>dee807ad-80ae-4db7-8172-d9826b9bca7e</id>
             <name>Nexus Snapshots</name>
-            <url>http://192.168.0.100:8081/repository/maven-snapshots/</url>
+            <url>http://192.168.1.120:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
