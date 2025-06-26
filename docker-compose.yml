@@ -11,11 +11,11 @@ services:
       - 3306:3306
     volumes:
       - db:/var/lib/mysql
+
   app-timesheet:
     depends_on:
       - mysqldb
     image: mouradhassini/achat-image:1.0.0
-    #build : ./
     restart: on-failure
     ports:
       - 8089:8089
@@ -30,5 +30,26 @@ services:
     stdin_open: true
     tty: true
 
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+    volumes:
+      - grafana-data:/var/lib/grafana
+
 volumes:
-  db :
+  db:
+  prometheus-data:
+  grafana-data:
