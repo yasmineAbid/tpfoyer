@@ -13,7 +13,7 @@
 
     <groupId>tn.esprit</groupId>
     <artifactId>tp-foyer</artifactId>
-    <version>5.0.0</version>
+    <version>5.0.0-SNAPSHOT</version>
     <name>tp-foyer</name>
     <description>tp-foyer</description>
 
@@ -25,6 +25,7 @@
     </properties>
 
     <dependencies>
+        <!-- tes dépendances ici -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -81,7 +82,7 @@
         </dependency>
     </dependencies>
 
-        <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -102,7 +103,6 @@
                 <version>4.0.0.4121</version>
             </plugin>
 
-            <!-- (optionnel) Compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -115,14 +115,18 @@
             </plugin>
         </plugins>
     </build>
-         <!-- Deploy to Nexus -->
+
     <distributionManagement>
         <repository>
             <id>nexus_jenkins</id>
-            <name>Nexus Repository</name>
+            <name>Nexus Releases</name>
             <url>http://192.168.1.120:8081/repository/maven-releases/</url>
         </repository>
+        <snapshotRepository>
+            <id>nexus_jenkins_snapshots</id>
+            <name>Nexus Snapshots</name>
+            <url>http://192.168.1.120:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
 
 </project>
-
