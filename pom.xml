@@ -25,7 +25,6 @@
     </properties>
 
     <dependencies>
-        <!-- tes dépendances ici -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -113,10 +112,31 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
+            <!-- ✅ Plugin JaCoCo ajouté pour la couverture SonarQube -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.10</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
-    <!--  Ajout pour Nexus -->
+    <!--  Configuration Nexus -->
     <distributionManagement>
         <repository>
             <id>dee807ad-80ae-4db7-8172-d9826b9bca7e</id>
