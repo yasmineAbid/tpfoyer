@@ -139,8 +139,8 @@
                             <dataFile>${project.build.directory}/jacoco.exec</dataFile>
                             <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
                             <formats>
-                                <format>xml</format>
-                                <format>html</format>
+                                <format>XML</format>
+                                <format>HTML</format>
                             </formats>
                         </configuration>
                     </execution>
