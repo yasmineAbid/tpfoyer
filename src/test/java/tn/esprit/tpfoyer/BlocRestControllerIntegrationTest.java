@@ -27,7 +27,7 @@ public class BlocRestControllerIntegrationTest {
     private BlocRepository blocRepository;
 
     private String getBaseUrl() {
-        return "http://localhost:" + port + "/bloc";
+        return "http://localhost:" + port + "/tpfoyer/bloc";
     }
 
     @Test
@@ -60,7 +60,6 @@ public class BlocRestControllerIntegrationTest {
 
         // Vérifier qu'il est supprimé
         List<Bloc> blocsRestants = blocRepository.findAll();
-        assertTrue(blocsRestants.stream().noneMatch(b -> b.getIdBloc() == (idBloc)));
+        assertTrue(blocsRestants.stream().noneMatch(b -> b.getIdBloc()== (idBloc)));
     }
 }
-
