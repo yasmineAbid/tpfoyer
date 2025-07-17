@@ -20,6 +20,8 @@
 
     <properties>
         <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <sonar.projectKey>tp-foyer</sonar.projectKey>
         <sonar.projectName>TP Foyer</sonar.projectName>
         <sonar.host.url>http://192.168.1.125:9000</sonar.host.url>
@@ -169,6 +171,13 @@
                 </executions>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
 
     <distributionManagement>
