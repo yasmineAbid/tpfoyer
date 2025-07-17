@@ -19,7 +19,7 @@ import static org.mockito.Mockito.*;
 public class ChambreServiceImplTest {
     @Mock
     private ChambreRepository chambreRepository;
-
+//test
     @InjectMocks
     private ChambreServiceImpl chambreService;
 
