@@ -22,7 +22,7 @@ public class BlocRestControllerIntegrationTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-
+//test
     @Autowired
     private BlocRepository blocRepository;
 
